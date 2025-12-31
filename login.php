@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Login</h2>
+<h2>Login My Daily Journal</h2>
 <form method="post" action="">
     Username : <input type="text" name="user"><br><br>
     Password : <input type="password" name="pass"><br><br>
