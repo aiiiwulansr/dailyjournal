@@ -121,18 +121,49 @@ include "koneksi.php";
         /* ======================================= */
         /* 4. GALLERY STYLES */
         /* ======================================= */
-        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; }
-        .gallery-img { transition: transform 0.5s, filter 0.4s; }
-        .gallery-item:hover .gallery-img { transform: scale(1.1); filter: brightness(80%); }
-        .gallery-overlay {
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255,105,180,0.6);
-            opacity: 0; display: flex; align-items: center; justify-content: center;
-            transition: opacity 0.4s;
-        }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-        .gallery-text { color: #fff; font-weight: 500; }
-        
+       .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 240px;
+    box-shadow: 0 6px 15px rgba(255,105,180,0.35);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+    filter: brightness(75%);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,105,180,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+
         /* ======================================= */
         /* 5. PROFILE STYLES (INLINE CSS DIPINDAHKAN) */
         /* ======================================= */
@@ -380,25 +411,51 @@ body.dark-mode .jadwal-card ul li {
     </h2>
 
     <div class="row g-4">
-    <?php
-    $gal = mysqli_query($conn,"SELECT * FROM gallery ORDER BY id DESC");
-    while($g = mysqli_fetch_array($gal)){
-    ?>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="gallery-item">
-                <img src="/img/<?= $g['gambar'] ?>" 
-                     class="img-fluid rounded gallery-img" 
-                     alt="<?= $g['judul'] ?>"/>
 
-                <div class="gallery-overlay">
-                    <span class="gallery-text"><?= $g['judul'] ?></span>
-                </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/8f/a9/26/8fa926ac368e98f2312c1a36ce49cf31.jpg" class="gallery-img">
+                <div class="gallery-overlay"><span>Bunga Lily</span></div>
             </div>
         </div>
-    <?php } ?>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/1200x/48/85/de/4885debd1dbe3989de83a94527c52082.jpg" class="gallery-img">
+                <div class="gallery-overlay"><span>Bunga Lavender</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/1200x/ea/d5/89/ead5898d5fcb80c65f4392f063ece887.jpg" class="gallery-img">
+                <div class="gallery-overlay"><span>Bunga Matahari</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/1200x/18/f0/27/18f02771d981a84caa549347b7e56bbd.jpg" class="gallery-img">
+                <div class="gallery-overlay"><span>Bunga Kamboja</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/6e/f2/24/6ef2243922917dbb9e8633be6279561e.jpg" class="gallery-img">
+                <div class="gallery-overlay"><span>Bunga Sakura</span></div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/1200x/9f/ef/f4/9feff4d87cc823ed1af26fc2b37b9fd8.jpg" class="gallery-img">
+                <div class="gallery-overlay"><span>Bunga Anggrek</span></div>
+            </div>
+        </div>
+
     </div>
 </section>
-
 
     <section id="profile" class="container shadow-sm mt-4">
         <h2 class="text-center mb-4 profile-title">
