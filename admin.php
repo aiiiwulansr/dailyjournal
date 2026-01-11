@@ -59,10 +59,15 @@ footer {
                 <li class="nav-item">
                     <a class="nav-link text-white" href="admin.php?page=dashboard">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="admin.php?page=article">Article</a>
-                </li>
-
+           <li class="nav-item">
+             <a class="nav-link text-white" href="admin.php?page=article">Article</a>
+              </li>
+                  <li class="nav-item">
+            <a class="nav-link text-white" href="admin.php?page=gallery">Gallery</a>
+               </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="admin.php?page=user">User</a>
+</li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" data-bs-toggle="dropdown">
                         <?= $_SESSION['username']; ?>
