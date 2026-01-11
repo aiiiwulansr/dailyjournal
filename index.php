@@ -374,26 +374,31 @@ body.dark-mode .jadwal-card ul li {
   </div>
 </section>
 <!-- article end -->
+<section id="gallery" class="container shadow-sm mt-4">
+    <h2 class="text-center mb-4 profile-title">
+        ✨🌸 Gallery 🌸✨
+    </h2>
 
-    <<section id="gallery" class="container shadow-sm mt-4">
-        <h2 class="text-center mb-4 profile-title">
-            ✨🌸 Gallery 🌸✨
-        </h2>
-        <div class="row g-4">
-            <div class="col-8 col-md-6">
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/736x/8f/a9/26/8fa926ac368e98f2312c1a36ce49cf31.jpg" class="img-fluid rounded gallery-img" alt="Bunga 5"/>
-                    <div class="gallery-overlay"><span class="gallery-text">Bunga Lily</span></div>
-                </div>
-            </div>
-            <div class="col-8 col-md-6">
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/1200x/48/85/de/4885debd1dbe3989de83a94527c52082.jpg" class="img-fluid rounded gallery-img" alt="Bunga 6"/>
-                    <div class="gallery-overlay"><span class="gallery-text">Bunga Lavender</span></div>
+    <div class="row g-4">
+    <?php
+    $gal = mysqli_query($conn,"SELECT * FROM gallery ORDER BY id DESC");
+    while($g = mysqli_fetch_array($gal)){
+    ?>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="gallery-item">
+                <img src="/img/<?= $g['gambar'] ?>" 
+                     class="img-fluid rounded gallery-img" 
+                     alt="<?= $g['judul'] ?>"/>
+
+                <div class="gallery-overlay">
+                    <span class="gallery-text"><?= $g['judul'] ?></span>
                 </div>
             </div>
         </div>
-    </section>
+    <?php } ?>
+    </div>
+</section>
+
 
     <section id="profile" class="container shadow-sm mt-4">
         <h2 class="text-center mb-4 profile-title">
